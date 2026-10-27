@@ -10,7 +10,9 @@ import { TerminalSimulator } from './components/TerminalSimulator';
 import { StepByStepVisualizer } from './components/StepByStepVisualizer';
 import { ConceptsDeck } from './components/ConceptsDeck';
 import { BeginnerQuiz } from './components/BeginnerQuiz';
-import { Code, Terminal, Cpu, BookOpen, CheckSquare, Sparkles } from 'lucide-react';
+import { ReadmeViewer } from './components/ReadmeViewer';
+import { README_MD_CONTENT } from './data/pythonCalculatorCode';
+import { Code, Terminal, Cpu, BookOpen, CheckSquare, Sparkles, FileText } from 'lucide-react';
 
 export default function App() {
   const [activeTab, setActiveTab] = useState<string>('code');
@@ -21,6 +23,7 @@ export default function App() {
     { id: 'visualizer', label: 'Execução Passo a Passo', icon: Cpu },
     { id: 'concepts', label: 'Conceitos Fundamentais', icon: BookOpen },
     { id: 'quiz', label: 'Desafios & Quiz', icon: CheckSquare },
+    { id: 'readme', label: 'README do GitHub', icon: FileText },
   ];
 
   return (
@@ -104,6 +107,10 @@ export default function App() {
 
           {activeTab === 'quiz' && (
             <BeginnerQuiz />
+          )}
+
+          {activeTab === 'readme' && (
+            <ReadmeViewer content={README_MD_CONTENT} />
           )}
         </section>
       </main>

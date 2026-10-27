@@ -24,8 +24,9 @@ export const Navbar: React.FC<NavbarProps> = ({ activeTab, setActiveTab }) => {
     { id: 'code', label: 'Código & Explicação' },
     { id: 'terminal', label: 'Terminal Interativo' },
     { id: 'visualizer', label: 'Passo a Passo' },
-    { id: 'concepts', label: 'Conceitos-Chave' },
+    { id: 'concepts', label: 'Conceitos' },
     { id: 'quiz', label: 'Desafios' },
+    { id: 'readme', label: 'README GitHub' },
   ];
 
   return (
